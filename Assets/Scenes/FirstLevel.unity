@@ -7083,7 +7083,7 @@ MonoBehaviour:
   rotationSpeed: 5
   invertYAxis: 0
   invertXAxis: 0
-  startingGravity: 2
+  startingGravity: 0.5
   maxDownVelosity: 20
   jumpForce: 10
   sprintAcceleration: 1.5
