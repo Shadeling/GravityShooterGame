@@ -12,7 +12,7 @@ public class Zombie : MonoBehaviour
     [SerializeField] Transform[] PatrolPoints;
     [SerializeField] int speed = 3;
     [SerializeField] float damage = 10;
-    [SerializeField] float distanceToAttack = 3;
+    [SerializeField] float distanceToAttack = 0.5f  ;
     [SerializeField] AudioClip[] audioClips;
 
 
@@ -66,13 +66,13 @@ public class Zombie : MonoBehaviour
             if (_hasTarget)
             {
                 _agent.destination = _player.transform.position;
-                if (_agent.remainingDistance < distanceToAttack && _time > _attackCooldown)
+                if (Vector3.Distance(gameObject.transform.position, _player.transform.position) < distanceToAttack && _time > _attackCooldown)
                 {
                     _animator.SetBool("IsAttacking", true);
                     Attack();
                     _time = 0;
                 }
-                if (_agent.remainingDistance > distanceToAttack && _time > _attackCooldown/3)
+                if (Vector3.Distance(gameObject.transform.position, _player.transform.position) > distanceToAttack && _time > _attackCooldown/3)
                 {
                     _agent.speed = speed * _speedMult;
                     _animator.SetBool("IsAttacking", false);

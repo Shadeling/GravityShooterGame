@@ -3109,6 +3109,28 @@ MonoBehaviour:
   Y_floors: 1
   X_backwalls: 0
   Z_leftwalls: 0
+--- !u!1 &554750744 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 860124310481026549, guid: 3ec48eb1c2b6ce0469402d90e3e05562,
+    type: 3}
+  m_PrefabInstance: {fileID: 1532595728}
+  m_PrefabAsset: {fileID: 0}
+--- !u!208 &554750745
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554750744}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!4 &558779511 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8029006700428842457, guid: 89526bdc8c65cd54cb7053f2911ecad6,
@@ -4654,6 +4676,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1171578646}
     m_Modifications:
+    - target: {fileID: 6989982692092334322, guid: b669f6bdcc002e849ace68f08dd37b53,
+        type: 3}
+      propertyPath: KeyCountForOpen
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6989982692092334326, guid: b669f6bdcc002e849ace68f08dd37b53,
         type: 3}
       propertyPath: m_RootOrder
@@ -10446,6 +10473,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GravityPlat (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 860124310481026549, guid: 3ec48eb1c2b6ce0469402d90e3e05562,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 860124310481026550, guid: 3ec48eb1c2b6ce0469402d90e3e05562,
         type: 3}
       propertyPath: m_RootOrder
@@ -12768,6 +12800,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 757153699d1cf374ca1b0647e996c15d, type: 3}
+--- !u!1 &1882313705 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 860124310481026549, guid: 3ec48eb1c2b6ce0469402d90e3e05562,
+    type: 3}
+  m_PrefabInstance: {fileID: 1900528577}
+  m_PrefabAsset: {fileID: 0}
+--- !u!208 &1882313706
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882313705}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1892476341
 GameObject:
   m_ObjectHideFlags: 0
@@ -13053,6 +13107,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GravityPlat
+      objectReference: {fileID: 0}
+    - target: {fileID: 860124310481026549, guid: 3ec48eb1c2b6ce0469402d90e3e05562,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 860124310481026550, guid: 3ec48eb1c2b6ce0469402d90e3e05562,
         type: 3}

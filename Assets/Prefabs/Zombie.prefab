@@ -1324,7 +1324,7 @@ MonoBehaviour:
   - {fileID: 0}
   speed: 3
   damage: 10
-  distanceToAttack: 4
+  distanceToAttack: 6
   audioClips:
   - {fileID: 8300000, guid: ce1415c1538344a3f9c07f2388ee0dee, type: 3}
   - {fileID: 8300000, guid: 2c706f39dc7b645e0a17766d7757d4c5, type: 3}
