@@ -159,6 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   KeyType: 0
   KeyCount: 1
+  audioManager: {fileID: 0}
 --- !u!65 &4673887937627572166
 BoxCollider:
   m_ObjectHideFlags: 0

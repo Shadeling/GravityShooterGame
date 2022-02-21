@@ -19,12 +19,9 @@ public class WeaponController : MonoBehaviour
     [SerializeField] float HandGunDamage = 10;
     [SerializeField] float HandGunTimeBetweenShots = 0.4f;
 
-    [SerializeField] AudioClip gravLeft;
-    [SerializeField] AudioClip gravRight;
-    [SerializeField] AudioClip handgunShot;
+    [SerializeField] MyAudioManager audioManager;
 
 
-    private AudioSource _audiSource;
     private Weapons weaponType = Weapons.GravityGun;
     //Скрипт на камере для обработки оружия
     private CameraWeaponChange _camWeapon;
@@ -36,7 +33,6 @@ public class WeaponController : MonoBehaviour
     {
         _line = gameObject.GetComponent<LineRenderer>();
         cam.TryGetComponent<CameraWeaponChange>(out _camWeapon);
-        TryGetComponent<AudioSource>(out _audiSource);
     }
 
     private void FixedUpdate()
@@ -95,19 +91,16 @@ public class WeaponController : MonoBehaviour
                 {
                     case 1: 
                         _line.startColor = Color.green;
-                        if (!_audiSource.isPlaying)
-                        {
-                            _audiSource.PlayOneShot(gravLeft, 0.2f);
-                        }
                         break;
                     case -1: 
                         _line.startColor = Color.red;
-                        if (!_audiSource.isPlaying)
-                        {
-                            _audiSource.PlayOneShot(gravRight, 0.2f);
-                        }
                         break;
                     case 0: _line.startColor = Color.blue; break;
+                }
+
+                if (!audioManager.GetPlaying())
+                {
+                    audioManager.PlayLaserGunShootSound();
                 }
 
 
@@ -137,7 +130,6 @@ public class WeaponController : MonoBehaviour
         else
         {
             _line.enabled = false;
-            _audiSource.Stop();
         }
 
 
@@ -150,7 +142,7 @@ public class WeaponController : MonoBehaviour
             //Анимация выстрела
             //_camWeapon.GetWeapon(weaponType).GetComponent<Animation>().Play("Gun");
             _camWeapon.GetWeapon(weaponType).GetComponent<Animator>().SetTrigger("Shoot");
-            _audiSource.PlayOneShot(handgunShot, 0.2f);
+            audioManager.PlayHandGunShootSound();
 
             var _bullet = Instantiate(HandGunBullet, _camWeapon.GetWeaponTransform(weaponType), Quaternion.identity);
             _bullet.GetComponent<WeaponBullet>().Init(_camWeapon.GetWeapon(weaponType).transform.forward, bulletSpeed, HandGunDamage);

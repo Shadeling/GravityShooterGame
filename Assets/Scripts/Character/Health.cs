@@ -17,16 +17,21 @@ public class Health : MonoBehaviour
     [Tooltip("Продолжительность неуязвимости в секундах после получения урона")]
     private float immunityTime = 0.5f;
 
+    [SerializeField] MyAudioManager audioManager;
+
 
     public UnityAction onDie;
     public UnityAction<float> onHeal;
     public UnityAction<float> onDamageTake;
 
 
+
     private float _currentHP { get; set; }
     private bool _invincible { get; set; }
     public bool canPickup() => _currentHP < maxHP;
+
     private bool _isDead;
+    private AudioSource _audioSource;
 
     // Start is called before the first frame update
     private void Awake()
@@ -46,6 +51,8 @@ public class Health : MonoBehaviour
     {
         if (!_invincible)
         {
+            audioManager.PlayHurtSound();
+
             float lastHP = _currentHP;
             _currentHP -= damage;
             _currentHP = Mathf.Clamp(_currentHP, 0f, maxHP);

@@ -118,8 +118,8 @@ public class Zombie : MonoBehaviour
         _isDead = true;
         _agent.speed = 0;
         _animator.SetBool("IsKilled", true);
-        _audioSource.clip = audioClips[2];
-        _audioSource.Play();
+
+        _audioSource.PlayOneShot(audioClips[2]);
     }
 
 
@@ -127,8 +127,8 @@ public class Zombie : MonoBehaviour
     private void Attack()
     {
         _agent.speed = 0;
-        _audioSource.clip = audioClips[1];
-        _audioSource.Play();
+        _audioSource.PlayOneShot(audioClips[1]);
+
         if (_player.TryGetComponent<Health>(out var playerHP))
         {
             playerHP.TakeDamage(damage);

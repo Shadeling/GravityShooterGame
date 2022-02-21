@@ -2,21 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[RequireComponent(typeof(Collider))]
 public class MedKit : MonoBehaviour
 {
     [SerializeField] float HealAmount = 50;
-    void Start()
+
+    private MyAudioManager audioManager;
+
+    private void Start()
     {
-        
+        audioManager = FindObjectOfType<MyAudioManager>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Medkit Picked Up");
+            audioManager.PlayMedKitPickUpSound();
             other.gameObject.GetComponentInParent<Health>().Heal(HealAmount);
             Destroy(this.gameObject);
+            
         }
     }
 

@@ -4679,7 +4679,7 @@ PrefabInstance:
     - target: {fileID: 6989982692092334322, guid: b669f6bdcc002e849ace68f08dd37b53,
         type: 3}
       propertyPath: KeyCountForOpen
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6989982692092334326, guid: b669f6bdcc002e849ace68f08dd37b53,
         type: 3}
@@ -5322,9 +5322,7 @@ MonoBehaviour:
     type: 3}
   HandGunDamage: 25
   HandGunTimeBetweenShots: 0.5
-  gravLeft: {fileID: 8300000, guid: a245ee5d75348c84a89ffb7992f1dc82, type: 3}
-  gravRight: {fileID: 8300000, guid: a245ee5d75348c84a89ffb7992f1dc82, type: 3}
-  handgunShot: {fileID: 8300000, guid: af66162561d2eed40ad49268cab318bb, type: 3}
+  audioManager: {fileID: 0}
 --- !u!143 &810480742
 CharacterController:
   m_ObjectHideFlags: 0
@@ -5371,6 +5369,7 @@ MonoBehaviour:
   maxHP: 200
   startHP: 100
   immunityTime: 0.5
+  audioManager: {fileID: 0}
 --- !u!114 &810480745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8217,6 +8216,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1156772744}
   - component: {fileID: 1156772745}
+  - component: {fileID: 1156772746}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -8256,6 +8256,24 @@ MonoBehaviour:
   gameOverText: {fileID: 1133932209}
   playerHealth: {fileID: 1650011574132392564}
   playerController: {fileID: 1021835131}
+--- !u!114 &1156772746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156772743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66a5573908038104ebed609df881d07d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainSource: {fileID: 1650011574132392568}
+  hurtSound: {fileID: 8300000, guid: fd5c07056ae9ba04e947bad513626d0e, type: 3}
+  keyPickUpSound: {fileID: 8300000, guid: 4c23edbea99b73847a365be5d2a9e91d, type: 3}
+  MedKitPickUpSound: {fileID: 8300000, guid: c328e50d03ac2244ebaf4c51c3161b59, type: 3}
+  HandGunShot: {fileID: 8300000, guid: 5646eb64953548b4899f023659a5293b, type: 3}
+  LaserGunShot: {fileID: 8300000, guid: a245ee5d75348c84a89ffb7992f1dc82, type: 3}
 --- !u!1 &1163605784
 GameObject:
   m_ObjectHideFlags: 0
@@ -15548,6 +15566,7 @@ MonoBehaviour:
   maxHP: 200
   startHP: 100
   immunityTime: 0.5
+  audioManager: {fileID: 1156772746}
 --- !u!114 &1650011574132392565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15566,9 +15585,7 @@ MonoBehaviour:
     type: 3}
   HandGunDamage: 25
   HandGunTimeBetweenShots: 0.5
-  gravLeft: {fileID: 8300000, guid: a245ee5d75348c84a89ffb7992f1dc82, type: 3}
-  gravRight: {fileID: 8300000, guid: a245ee5d75348c84a89ffb7992f1dc82, type: 3}
-  handgunShot: {fileID: 8300000, guid: af66162561d2eed40ad49268cab318bb, type: 3}
+  audioManager: {fileID: 1156772746}
 --- !u!120 &1650011574132392566
 LineRenderer:
   m_ObjectHideFlags: 0
